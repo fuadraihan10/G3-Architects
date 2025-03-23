@@ -99,22 +99,67 @@ main > section{
     width: 100%;
 }
 
+/* team and feature related styles */
+.teams{
+    align-items: center;
+}
+
+.team-img-container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.our-features{
+    margin-left: 130px;
+    max-width: 530px;
+}
+
+#quick-list{
+    font-weight: 500;
+}
+
 
 /* responsive media query */
 @media screen and (max-width: 576px) {
     .navbar, 
-    .nav-links{
-        flex-direction: column;
-    }
-
-}
-
-
-
-/* medium size device */
-@media screen and (min-width: 576px) and (max-width: 992px) {
+    .nav-links, 
+    .features,
     .teams{
         flex-direction: column;
     }
 
+    .team-img-container, 
+    .facts-container, 
+    .sponsor-companies
+    {
+        grid-template-columns: 1fr;
+    }
+
+    .facts-container{
+        justify-items: center;
+        gap: 24px;
+    }
+}
+
+
+/* medium size device */
+@media screen and (min-width: 576px) and (max-width: 992px) {
+    .teams, .features{
+        flex-direction: column;
+    }
+    .our-features{
+        margin: 50px auto;
+    }
+
+    .sponsor-companies, .facts-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 50px;
+        justify-items: center;
+    }
+
+    #experience-badge{
+        margin-top: 20px;
+        margin-left: 20px;
+    }
 }
